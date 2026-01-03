@@ -1,68 +1,72 @@
 import React, { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "./firebase";
+import "./App.css";
 
 function App() {
   const [sleep, setSleep] = useState("");
   const [workload, setWorkload] = useState("");
   const [mood, setMood] = useState("");
   const [result, setResult] = useState("");
+  const [level, setLevel] = useState("");
 
   const analyzeStress = async () => {
-  let stress = "";
+    let stress = "";
+    let stressLevel = "";
 
-  if (sleep < 5 && workload > 7 && mood < 4) {
-    stress = "🔴 High Stress";
-  } else if (sleep < 6 || workload > 6) {
-    stress = "🟠 Medium Stress";
-  } else {
-    stress = "🟢 Low Stress";
-  }
+    if (sleep < 5 && workload > 7 && mood < 4) {
+      stress = "😡 High Stress";
+      stressLevel = "high";
+    } else if (sleep < 6 || workload > 6) {
+      stress = "😟 Medium Stress";
+      stressLevel = "medium";
+    } else {
+      stress = "😊 Low Stress";
+      stressLevel = "low";
+    }
 
-  setResult(stress);
+    setResult(stress);
+    setLevel(stressLevel);
 
-  // save data to Firebase
-  await addDoc(collection(db, "stressReports"), {
-    sleep,
-    workload,
-    mood,
-    stress,
-    createdAt: new Date()
-  });
-};
-
+    await addDoc(collection(db, "stressReports"), {
+      sleep,
+      workload,
+      mood,
+      stress,
+      createdAt: new Date(),
+    });
+  };
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1>MindGuard AI</h1>
+    <div className="container">
+      <h1>🧠 MindGuard AI</h1>
       <p>Daily Student Stress Check-In</p>
 
       <input
         type="number"
-        placeholder="Sleep Hours"
+        placeholder="😴 Sleep Hours"
         onChange={(e) => setSleep(e.target.value)}
       />
-      <br /><br />
 
       <input
         type="number"
-        placeholder="Workload (1-10)"
+        placeholder="📚 Workload (1–10)"
         onChange={(e) => setWorkload(e.target.value)}
       />
-      <br /><br />
 
       <input
         type="number"
-        placeholder="Mood (1-10)"
+        placeholder="😊 Mood (1–10)"
         onChange={(e) => setMood(e.target.value)}
       />
-      <br /><br />
 
-      <button onClick={analyzeStress}>
-        Analyze Stress
-      </button>
+      <button onClick={analyzeStress}>Analyze Stress</button>
 
-      {result && <h2>{result}</h2>}
+      {result && (
+        <div className={`result ${level}`}>
+          {result}
+        </div>
+      )}
     </div>
   );
 }
