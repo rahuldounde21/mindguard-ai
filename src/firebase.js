@@ -1,14 +1,17 @@
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD2HxcSIeQ11uaTb5dwkei9ZvAhB_wtuaw",
-  authDomain: "mindguard-ai-58ad8.firebaseapp.com",
-  projectId: "mindguard-ai-58ad8",
-  storageBucket: "mindguard-ai-58ad8.appspot.com",
-  messagingSenderId: "1093373904214",
-  appId: "1:1093373904214:web:82c8d99aa31f8abeae42f7"
+  apiKey: "PASTE_HERE",
+  authDomain: "PASTE_HERE",
+  projectId: "PASTE_HERE",
+  storageBucket: "PASTE_HERE",
+  messagingSenderId: "PASTE_HERE",
+  appId: "PASTE_HERE",
 };
 
 const app = initializeApp(firebaseConfig);
+
+export const auth = getAuth(app);
 export const db = getFirestore(app);
