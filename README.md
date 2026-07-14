@@ -1,4 +1,4 @@
-# 🧠 MindGuard AI  
+ # 🧠 MindGuard AI  
 AI-Driven Student Stress Monitoring System
 
 ## 🚀 Project Overview
